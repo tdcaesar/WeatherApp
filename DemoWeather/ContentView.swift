@@ -8,45 +8,58 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isDayTime: Bool = true
+    
     var body: some View {
         ZStack {
-            BackgroundView(
-                topColor: Color("Accent1"),
-                bottomColor: Color("Accent2"))
+            BackgroundView(isDayTime: $isDayTime)
+                
             VStack {
                 CityTextView(cityName: "Atlanta, GA")
                 CurrentWeatherView(
-                    imageName: "cloud.sun.fill",
+                    imageName: isDayTime ? "cloud.sun.fill" :
+                        "cloud.moon.fill",
                     temperature: 76)
                 
                 HStack(spacing: 10) {
                     WeatherDayView(
                         dayOfWeek: "MON",
-                        imageName: "cloud.rain.fill", temperature: 74)
+                        imageName: isDayTime ? "cloud.rain.fill" :
+                            "cloud.moon.rain.fill",
+                        temperature: 74)
                     WeatherDayView(
                         dayOfWeek: "TUE",
-                        imageName: "cloud.sun.fill", temperature: 75)
+                        imageName: isDayTime ? "cloud.sun.fill" :
+                            "cloud.moon.fill",
+                        temperature: 75)
                     WeatherDayView(
                         dayOfWeek: "WED",
-                        imageName: "tornado", temperature: 90)
+                        imageName: "tornado",
+                        temperature: 90)
                     WeatherDayView(
                         dayOfWeek: "THR",
-                        imageName: "sun.max.fill", temperature: 78)
+                        imageName: isDayTime ? "sun.max.fill" : "moon.fill",
+                        temperature: 78)
                     WeatherDayView(
                         dayOfWeek: "FRI",
-                        imageName: "sun.max.fill", temperature: 79)
+                        imageName: isDayTime ? "sun.max.fill" : "moon.fill",
+                        temperature: 79)
                     WeatherWeekendView(
                         dayOfWeek: "SAT",
-                        imageName: "cloud.hail.fill", temperature: 80)
+                        imageName: "cloud.hail.fill",
+                        temperature: 80)
                     WeatherWeekendView(
                         dayOfWeek: "SUN",
-                        imageName: "cloud.sun.fill", temperature: 70)
+                        imageName: isDayTime ? "cloud.sun.fill" :
+                            "cloud.moon.fill",
+                        temperature: 70)
                     
                 }
                 Spacer()
                 Button
                 {
-                    print("tapped")
+                    isDayTime.toggle()
                 } label: {
                     WeatherButtonView(
                         title: "Change Day Time",
@@ -111,11 +124,13 @@ struct WeatherWeekendView: View {
 }
 
 struct BackgroundView: View {
-    var topColor: Color
-    var bottomColor: Color
+    
+    @Binding var isDayTime: Bool
     
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [topColor, bottomColor]),
+        LinearGradient(gradient: Gradient(colors: [
+            isDayTime ? Color("Accent4") : Color("Accent2"),
+            isDayTime ? Color("Accent1") : Color("Accent5")]),
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
         .edgesIgnoringSafeArea(.all)
