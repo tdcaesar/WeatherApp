@@ -8,12 +8,16 @@
 
 import SwiftUI
 
-enum Day {
-    case MON
-    case TUE
-    case WED
-    case THR
-    case FRI
-    case SAT
-    case SUN
+enum Day : String {
+    case MON = "MON"
+    case TUE = "TUE"
+    case WED = "WED"
+    case THR = "THR"
+    case FRI = "FRI"
+    case SAT = "SAT"
+    case SUN = "SUN"
+}
+
+func IsWeekend(day: Day) -> Bool {
+    return day == .SAT || day == .SUN
 }

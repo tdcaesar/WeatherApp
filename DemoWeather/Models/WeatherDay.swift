@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct WeatherDay {
+    let id = UUID()
     var day: Day
     var weather: Weather
     var temperature: Int

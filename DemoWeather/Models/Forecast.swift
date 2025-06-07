@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct Forecast {
+    var days: [WeatherDay]
+}
