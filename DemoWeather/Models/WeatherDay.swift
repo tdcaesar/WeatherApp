@@ -10,7 +10,9 @@ import SwiftUI
 
 struct WeatherDay {
     let id = UUID()
-    var day: Day
-    var weather: Weather
-    var temperature: Int
+    var day: Day = .MON
+    var weather: Weather = Weather.Unknown
+    var temperature: Int = Int.min
+    
+    var temperatureText: String { get { temperature == Int.min ? "-°" : "\(temperature)°" } }
 }

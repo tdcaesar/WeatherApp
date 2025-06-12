@@ -19,29 +19,32 @@ enum Weather {
     case Hail
     case Foggy
     case Windy
-}
-
-func ImageSelector(isDayTime: Bool, weatherType: Weather)-> String {
-    switch weatherType {
-    case .Clear:
-        return isDayTime ? "sun.max.fill" : "moon.fill"
-    case .Cloudy:
-        return isDayTime ? "cloud.fill" : "cloud.fill"
-    case .PartlyCloudy:
-        return isDayTime ? "cloud.sun.fill" : "cloud.moon.fill"
-    case .Rainy:
-        return isDayTime ? "cloud.rain.fill" : "cloud.moon.rain.fill"
-    case .Snowy:
-        return "cloud.snow.fill"
-    case .Thunderstorm:
-        return isDayTime ? "cloud.bolt.rain.fill" : "cloud.moon.bolt.fill"
-    case .Tornado:
-        return "tornado"
-    case .Hail:
-        return "cloud.hail.fill"
-    case .Foggy:
-        return isDayTime ? "cloud.fog.fill" : "cloud.moon.fog.fill"
-    case .Windy:
-        return "wind"
+    case Unknown
+    
+    func ImageName(_ isDayTime: Bool)-> String {
+        switch self {
+        case .Clear:
+            return isDayTime ? "sun.max.fill" : "moon.fill"
+        case .Cloudy:
+            return isDayTime ? "cloud.fill" : "cloud.fill"
+        case .PartlyCloudy:
+            return isDayTime ? "cloud.sun.fill" : "cloud.moon.fill"
+        case .Rainy:
+            return isDayTime ? "cloud.rain.fill" : "cloud.moon.rain.fill"
+        case .Snowy:
+            return "cloud.snow.fill"
+        case .Thunderstorm:
+            return isDayTime ? "cloud.bolt.rain.fill" : "cloud.moon.bolt.fill"
+        case .Tornado:
+            return "tornado"
+        case .Hail:
+            return "cloud.hail.fill"
+        case .Foggy:
+            return isDayTime ? "cloud.fog.fill" : "cloud.moon.fog.fill"
+        case .Windy:
+            return "wind"
+        case .Unknown:
+            return "circle.badge.questionmark"
+        }
     }
 }
