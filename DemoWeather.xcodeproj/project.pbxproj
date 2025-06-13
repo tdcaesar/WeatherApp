@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CB3AA2322DFB9FCF009B2D05 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3AA2312DFB9FCF009B2D05 /* ModelData.swift */; };
-		CB3AA2342DFB9FFE009B2D05 /* weatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = CB3AA2332DFB9FFE009B2D05 /* weatherData.json */; };
-		CB3AA2392DFC46E6009B2D05 /* forecastData.json in Resources */ = {isa = PBXBuildFile; fileRef = CB3AA2382DFC46E6009B2D05 /* forecastData.json */; };
-		CB3AA23B2DFC66FF009B2D05 /* forecastDayData.json in Resources */ = {isa = PBXBuildFile; fileRef = CB3AA23A2DFC66FF009B2D05 /* forecastDayData.json */; };
-		CB3AA2412DFC81C8009B2D05 /* noaaOfficeData.json in Resources */ = {isa = PBXBuildFile; fileRef = CB3AA2402DFC81BF009B2D05 /* noaaOfficeData.json */; };
-		CB3AA2432DFC9A42009B2D05 /* noaaForecast.json in Resources */ = {isa = PBXBuildFile; fileRef = CB3AA2422DFC9A3A009B2D05 /* noaaForecast.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +32,6 @@
 		CB3AA0D72DF32891009B2D05 /* DemoWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3AA0E12DF32891009B2D05 /* DemoWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3AA2312DFB9FCF009B2D05 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		CB3AA2332DFB9FFE009B2D05 /* weatherData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weatherData.json; sourceTree = "<group>"; };
-		CB3AA2382DFC46E6009B2D05 /* forecastData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = forecastData.json; sourceTree = "<group>"; };
-		CB3AA23A2DFC66FF009B2D05 /* forecastDayData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = forecastDayData.json; sourceTree = "<group>"; };
-		CB3AA2402DFC81BF009B2D05 /* noaaOfficeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = noaaOfficeData.json; sourceTree = "<group>"; };
-		CB3AA2422DFC9A3A009B2D05 /* noaaForecast.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = noaaForecast.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -58,6 +48,16 @@
 		CB3AA0E42DF32891009B2D05 /* DemoWeatherUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DemoWeatherUITests;
+			sourceTree = "<group>";
+		};
+		CB3AA24F2DFCC689009B2D05 /* NOAA */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NOAA;
+			sourceTree = "<group>";
+		};
+		CB3AA2502DFCC695009B2D05 /* OpenWeather */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OpenWeather;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -111,12 +111,9 @@
 		CB3AA22D2DFB9E86009B2D05 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				CB3AA2422DFC9A3A009B2D05 /* noaaForecast.json */,
-				CB3AA2402DFC81BF009B2D05 /* noaaOfficeData.json */,
+				CB3AA2502DFCC695009B2D05 /* OpenWeather */,
+				CB3AA24F2DFCC689009B2D05 /* NOAA */,
 				CB3AA2312DFB9FCF009B2D05 /* ModelData.swift */,
-				CB3AA2332DFB9FFE009B2D05 /* weatherData.json */,
-				CB3AA2382DFC46E6009B2D05 /* forecastData.json */,
-				CB3AA23A2DFC66FF009B2D05 /* forecastDayData.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -138,6 +135,8 @@
 			);
 			fileSystemSynchronizedGroups = (
 				CB3AA0CC2DF32890009B2D05 /* DemoWeather */,
+				CB3AA24F2DFCC689009B2D05 /* NOAA */,
+				CB3AA2502DFCC695009B2D05 /* OpenWeather */,
 			);
 			name = DemoWeather;
 			packageProductDependencies = (
@@ -241,11 +240,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB3AA2342DFB9FFE009B2D05 /* weatherData.json in Resources */,
-				CB3AA2432DFC9A42009B2D05 /* noaaForecast.json in Resources */,
-				CB3AA23B2DFC66FF009B2D05 /* forecastDayData.json in Resources */,
-				CB3AA2412DFC81C8009B2D05 /* noaaOfficeData.json in Resources */,
-				CB3AA2392DFC46E6009B2D05 /* forecastData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
