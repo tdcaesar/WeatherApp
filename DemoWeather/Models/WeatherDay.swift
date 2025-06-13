@@ -12,7 +12,7 @@ struct WeatherDay {
     let id = UUID()
     var day: Day = .MON
     var weather: Weather = Weather.Unknown
-    var temperature: Int = Int.min
+    var temperature: Double = Double(Int.min)
     
-    var temperatureText: String { get { temperature == Int.min ? "-°" : "\(temperature)°" } }
+    var temperatureText: String { get { temperature == Double(Int.min) ? "-°" : "\(temperature)°" } }
 }

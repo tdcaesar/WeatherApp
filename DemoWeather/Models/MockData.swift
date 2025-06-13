@@ -10,7 +10,7 @@ import Foundation
 struct MockData {
     static let defaultDayTime = true
     
-    static let UnknownWeather = WeatherDay(day: .SUN, weather: .Unknown, temperature: Int.min)
+    static let UnknownWeather = WeatherDay(day: .SUN, weather: .Unknown, temperature: Double(Int.min))
     static let TodayWeather = WeatherDay(day: .SUN, weather: .PartlyCloudy, temperature: 76)
     
     static let UnknownForecastWeek = Forecast(days: [

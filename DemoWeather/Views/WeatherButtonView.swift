@@ -29,6 +29,6 @@ struct WeatherButtonView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherButtonView(title: "Test Button",
                           textColor: .white,
-                          backgroundColor: Color("Accent9"))
+                          backgroundColor: Color(.accent))
     }
 }

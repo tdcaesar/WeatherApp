@@ -10,12 +10,12 @@ import SwiftUI
 
 struct BackgroundView: View {
     
-    var isDayTime: Bool
+    @Binding var isDayTime: Bool
     
     var body: some View {
         LinearGradient(gradient: Gradient(colors: [
-            isDayTime ? Color("Accent4") : Color("Accent2"),
-            isDayTime ? Color("Accent1") : Color("Accent5")]),
+            isDayTime ? Color(.accent4) : Color(.accent2),
+            isDayTime ? Color(.accent1) : Color(.accent5)]),
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
         .ignoresSafeArea()
@@ -23,5 +23,5 @@ struct BackgroundView: View {
 }
 
 #Preview {
-    BackgroundView(isDayTime: true)
+    BackgroundView(isDayTime: .constant(true))
 }

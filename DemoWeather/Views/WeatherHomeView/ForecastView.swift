@@ -11,12 +11,14 @@ import SwiftUI
 struct ForecastView: View {
     
     @Binding var isDayTime: Bool
-    var Forecast: Forecast
+    @Binding var forecast: NoaaForecast
     
     var body: some View {
         HStack(spacing: 10) {
-            ForEach(Forecast.days, id: \.id) { weatherDay in
-                WeatherDayView(isDayTime: $isDayTime, forecastDay: weatherDay)
+            ForEach($forecast.properties.periods, id: \.number) { weatherDay in
+                if weatherDay.number.wrappedValue % 2 != 0 {
+                    WeatherDayView(isDayTime: $isDayTime, forecastDay: weatherDay)
+                }
             }
         }
     }
@@ -24,8 +26,9 @@ struct ForecastView: View {
 
 #Preview {
 @Previewable @State var daytime: Bool = true
-    ForecastView(isDayTime: $daytime, Forecast: MockData.ForecastWeek)
+@Previewable @State var forecast = previewNoaaForecast
+    ForecastView(isDayTime: $daytime, forecast: $forecast)
         .background(Color("Accent4"))
-    ForecastView(isDayTime: $daytime, Forecast: MockData.UnknownForecastWeek)
-        .background(.gray)
+//    ForecastView(isDayTime: $daytime, Forecast: MockData.UnknownForecastWeek)
+//        .background(.gray)
 }

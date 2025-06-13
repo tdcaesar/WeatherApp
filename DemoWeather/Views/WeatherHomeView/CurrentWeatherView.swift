@@ -10,17 +10,18 @@ import SwiftUI
 struct CurrentWeatherView: View {
 
     @Binding var isDayTime: Bool
-    var currentWeather: WeatherDay
+    var currentWeather: NoaaForecast.NoaaDailyWeather
 
     var body: some View {
         VStack(spacing: 2) {
-            Image(systemName: currentWeather.weather.ImageName(isDayTime))
+            WeatherRemoteImage(urlString: currentWeather.icon)
+            //Image(systemName: currentWeather.weather.ImageName(isDayTime))
                 .symbolRenderingMode(.multicolor)
-                .renderingMode(.original)
-                .resizable()
+                //.renderingMode(.original)
+                //.resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 180, height: 180)
-            Text(currentWeather.temperatureText)
+            Text("\(currentWeather.temperature)°")
                 .font(.system(size: 70, weight: .medium, design: .default))
                 .foregroundColor(.white)
         }
@@ -30,8 +31,8 @@ struct CurrentWeatherView: View {
 
 #Preview {
     @Previewable @State var daytime: Bool = true
-    CurrentWeatherView(isDayTime: $daytime, currentWeather: MockData.TodayWeather)
+    CurrentWeatherView(isDayTime: $daytime, currentWeather: previewNoaaForecast.properties.periods[0])
         .background(Color("Accent4"))
-    CurrentWeatherView(isDayTime: $daytime, currentWeather: MockData.UnknownWeather)
-        .background(.gray)
+//    CurrentWeatherView(isDayTime: $daytime, currentWeather: MockData.UnknownWeather)
+//        .background(.gray)
 }
