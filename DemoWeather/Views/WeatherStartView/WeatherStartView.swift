@@ -59,5 +59,5 @@ struct WeatherStartView: View {
 }
 
 #Preview {
-    WeatherStartView(noaaOfficeId: previewOfficeId)
+    WeatherStartView(noaaOfficeId: MockNoaaData.previewOfficeId)
 }

@@ -7,8 +7,11 @@
 
 import Foundation
 
-var previewOfficeId = NoaaOfficeId(city: "New York", state: "NY", cwa: "OKX", gridX: 36, gridY: 36)
-var previewNoaaForecast: NoaaForecast = load("noaaForecast.json")
+struct MockNoaaData {
+    static var previewOfficeId = NoaaOfficeId(city: "New York", state: "NY", cwa: "OKX", gridX: 36, gridY: 36)
+    static var previewNoaaForecast: NoaaForecast = load("noaaForecast.json")
+}
+
 var previewWeather: CurrentWeatherResponse = load("weatherData.json")
 var previewForecast: ForecastThreeHourWeatherResponse = load("forecastData.json")
 var previewOffice: NoaaOffice = load("noaaOfficeData.json")

@@ -31,7 +31,7 @@ struct CurrentWeatherView: View {
 
 #Preview {
     @Previewable @State var daytime: Bool = true
-    CurrentWeatherView(isDayTime: $daytime, currentWeather: previewNoaaForecast.properties.periods[0])
+    CurrentWeatherView(isDayTime: $daytime, currentWeather: MockNoaaData.previewNoaaForecast.properties.periods[0])
         .background(Color("Accent4"))
 //    CurrentWeatherView(isDayTime: $daytime, currentWeather: MockData.UnknownWeather)
 //        .background(.gray)

@@ -39,7 +39,7 @@ struct WeatherHomeView: View {
 }
 
 #Preview {
-    WeatherHomeView(office: previewOfficeId, forecast: previewNoaaForecast, viewModel: MockData.weatherViewModel)
+    WeatherHomeView(office: MockNoaaData.previewOfficeId, forecast: MockNoaaData.previewNoaaForecast, viewModel: MockData.weatherViewModel)
     //WeatherHomeView(viewModel: MockData.unknownWeatherViewModel)
 }
 

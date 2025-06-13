@@ -26,7 +26,7 @@ struct ForecastView: View {
 
 #Preview {
 @Previewable @State var daytime: Bool = true
-@Previewable @State var forecast = previewNoaaForecast
+    @Previewable @State var forecast = MockNoaaData.previewNoaaForecast
     ForecastView(isDayTime: $daytime, forecast: $forecast)
         .background(Color("Accent4"))
 //    ForecastView(isDayTime: $daytime, Forecast: MockData.UnknownForecastWeek)

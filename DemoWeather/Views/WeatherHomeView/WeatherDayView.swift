@@ -50,7 +50,7 @@ struct WeatherDayView: View {
 
 #Preview {
     @Previewable @State var daytime: Bool = true
-    @Previewable @State var forecastDay = previewNoaaForecast.properties.periods[0]
+    @Previewable @State var forecastDay = MockNoaaData.previewNoaaForecast.properties.periods[0]
     WeatherDayView(isDayTime: $daytime, forecastDay: $forecastDay)
         .background(Color("Accent4"))
 //    WeatherDayView(isDayTime: $daytime, forecastDay: MockData.UnknownWeather)
